@@ -25,6 +25,30 @@
         };
     };
 
+    behaviors {
+        balanced_homerow_mods: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCED_HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+
+        homerow_mods: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -37,11 +61,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC           &kp N1          &kp N2          &kp N3            &kp N4       &kp N5                                  &kp N6  &kp N7       &kp N8             &kp N9           &kp N0                    &kp DE_ACUTE
-&kp TAB           &kp Q           &kp W           &kp E             &kp R        &kp T                                   &kp Y   &kp U        &kp I              &kp O            &kp P                     &kp DE_PLUS
-&kp LEFT_CONTROL  &mt A LEFT_GUI  &mt S LEFT_ALT  &mt D LEFT_SHIFT  &mt F LCTRL  &kp G                                   &kp H   &mt J RCTRL  &mt K RIGHT_SHIFT  &mt L RIGHT_ALT  &mt DE_SHARP_S RIGHT_GUI  &kp DE_HASH
-&kp LEFT_SHIFT    &kp Z           &kp X           &kp C             &kp V        &kp B   &kp C_PLAY_PAUSE    &kp C_MUTE  &kp N   &kp M        &kp COMMA          &kp DOT          &kp FSLH                  &kp RSHFT
-                                                  &kp LALT          &kp LGUI     &mo 1   &kp SPACE           &kp RET     &mo 2   &kp BSPC     &kp DELETE
+&kp ESC           &kp N1                             &kp N2                             &kp N3                               &kp N4                          &kp N5                                  &kp N6  &kp N7                          &kp N8                                &kp N9                              &kp N0                                       &kp DE_ACUTE
+&kp TAB           &kp Q                              &kp W                              &kp E                                &kp R                           &kp T                                   &kp Y   &kp U                           &kp I                                 &kp O                               &kp P                                        &kp DE_PLUS
+&kp LEFT_CONTROL  &balanced_homerow_mods A LEFT_GUI  &balanced_homerow_mods S LEFT_ALT  &balanced_homerow_mods D LEFT_SHIFT  &balanced_homerow_mods F LCTRL  &kp G                                   &kp H   &balanced_homerow_mods J RCTRL  &balanced_homerow_mods K RIGHT_SHIFT  &balanced_homerow_mods L RIGHT_ALT  &balanced_homerow_mods DE_SHARP_S RIGHT_GUI  &kp DE_HASH
+&kp LEFT_SHIFT    &kp Z                              &kp X                              &kp C                                &kp V                           &kp B   &kp C_PLAY_PAUSE    &kp C_MUTE  &kp N   &kp M                           &kp COMMA                             &kp DOT                             &kp FSLH                                     &kp RSHFT
+                                                                                        &kp LALT                             &kp LGUI                        &mo 1   &kp SPACE           &kp RET     &mo 2   &kp BSPC                        &kp DELETE
             >;
 
             sensor-bindings =
