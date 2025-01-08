@@ -25,17 +25,17 @@
         };
 
         Copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp LG(DE_C)>;
             key-positions = <38 39>;
         };
 
         Paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp LG(DE_V)>;
             key-positions = <39 40>;
         };
 
         Cut {
-            bindings = <&kp K_CUT>;
+            bindings = <&kp LG(DE_X)>;
             key-positions = <38 39 40>;
         };
     };
