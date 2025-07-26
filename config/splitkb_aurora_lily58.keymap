@@ -79,8 +79,8 @@
 &kp ESC           &kp N1                             &kp N2                             &kp N3                                 &kp N4                               &kp N5                                  &kp N6  &kp N7                                &kp N8                                  &kp N9                              &kp N0                                       &kp DE_ACUTE
 &kp TAB           &kp Q                              &kp W                              &kp E                                  &kp R                                &kp T                                   &kp Y   &kp U                                 &kp I                                   &kp O                               &kp P                                        &kp DE_PLUS
 &kp LEFT_CONTROL  &balanced_homerow_mods LEFT_GUI A  &balanced_homerow_mods LEFT_ALT S  &balanced_homerow_mods LEFT_CONTROL D  &balanced_homerow_mods LEFT_SHIFT F  &kp G                                   &kp H   &balanced_homerow_mods RIGHT_SHIFT J  &balanced_homerow_mods RIGHT_CONTROL K  &balanced_homerow_mods RIGHT_ALT L  &balanced_homerow_mods RIGHT_GUI DE_SHARP_S  &kp DE_HASH
-&kp LEFT_SHIFT    &kp Z                              &kp X                              &kp C                                  &kp V                                &kp B   &kp C_PLAY_PAUSE    &kp C_MUTE  &kp N   &kp M                                 &kp COMMA                               &kp DOT                             &kp FSLH                                     &kp RSHFT
-                                                                                        &kp TAB                                &mo 3                                &mo 1   &kp SPACE           &kp RET     &mo 2   &kp BSPC                              &kp DELETE
+&mo 3             &kp Z                              &kp X                              &kp C                                  &kp V                                &kp B   &kp C_PLAY_PAUSE    &kp C_MUTE  &kp N   &kp M                                 &kp COMMA                               &kp DOT                             &kp FSLH                                     &kp RSHFT
+                                                                                        &kp TAB                                &mo 4                                &mo 1   &kp SPACE           &kp RET     &mo 2   &kp BSPC                              &kp DELETE
             >;
 
             sensor-bindings =
@@ -106,7 +106,6 @@
                                                &trans                &trans                &trans         &trans    &trans  &trans            &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             label = "Symbol";
         };
 
@@ -119,27 +118,24 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans           &trans    &trans          &trans     &trans                           &trans  &trans           &trans  &trans           &trans  &trans
-&trans  &trans           &trans    &kp UP_ARROW    &trans     &kp PAGE_UP                      &trans  &kp DE_U_UMLAUT  &trans  &kp DE_O_UMLAUT  &trans  &trans
-&trans  &kp DE_A_UMLAUT  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp PAGE_DOWN                    &trans  &trans           &trans  &trans           &trans  &trans
-&trans  &trans           &trans    &trans          &trans     &trans         &trans    &trans  &trans  &trans           &trans  &trans           &trans  &trans
-                                   &trans          &trans     &trans         &trans    &trans  &trans  &trans           &trans
+&trans  &trans           &trans       &trans          &trans          &trans                      &trans  &trans            &trans  &trans           &trans          &trans
+&trans  &trans           &kp PAGE_UP  &kp UP_ARROW    &kp PG_DN       &kp HOME                    &trans  &kp DE_U_UMLAUT   &trans  &kp DE_O_UMLAUT  &trans          &trans
+&trans  &kp DE_A_UMLAUT  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT       &kp END                     &trans  &kp C_MUTE        &trans  &trans           &kp UP          &kp DOWN_ARROW
+&trans  &trans           &trans       &trans          &kp LEFT_SHIFT  &trans    &trans    &trans  &trans  &kp C_PLAY_PAUSE  &trans  &trans           &kp LEFT_ARROW  &kp RIGHT
+                                      &trans          &trans          &trans    &trans    &trans  &trans  &trans            &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             label = "Nav";
         };
 
-        number {
+        Shortcuts {
             bindings = <
-&trans  &trans   &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans                    &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans                    &kp N4  &kp N5  &kp N6  &trans  &trans  &trans
-&trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans
-                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &trans     &trans         &trans                &trans         &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &kp LG(Y)  &kp LG(LS(Y))  &kp LS(LG(NUMBER_7))  &kp LS(LG(F))  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &trans     &trans         &trans                &trans         &trans  &trans
+&trans  &trans  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans    &trans  &trans     &trans         &trans                &trans         &trans  &trans
+                           &trans     &trans     &trans  &trans    &trans  &trans     &trans         &trans
             >;
-
-            label = "Number";
         };
 
         system {
@@ -151,7 +147,6 @@
                                                         &trans           &trans           &trans           &trans    &trans  &trans                             &trans                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             label = "System";
         };
     };
